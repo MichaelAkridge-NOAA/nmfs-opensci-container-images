@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Buttons
-parent: Images
+title: arcgis
+parent: Image Info
 nav_order: 2
+has_children: true
 ---
 # arcgis Python Dockerfile
 

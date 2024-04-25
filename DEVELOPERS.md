@@ -1,3 +1,11 @@
+---
+layout: default
+title: Developer Info
+nav_order: 3
+has_children: true
+has_toc: false
+---
+
 # NMFS Open Science Docker Stack -- for developers
 
 These are a collection of container images to provide standardized environments for Python and R computing. See the wiki for discussion of the images. Want to contribute? Put in a pull request or if you are from NOAA Fisheries, reach out to Eli Holmes to be added to the repository.

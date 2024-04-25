@@ -1,3 +1,11 @@
+---
+layout: default
+title: py-rocket-base
+parent: Image Info
+nav_order: 2
+has_children: true
+---
+
 # Readme
 
 This creates a basic R image built off rocker/verse.

@@ -1,3 +1,11 @@
+---
+layout: default
+title: aomlomics-jh
+parent: Image Info
+nav_order: 2
+has_children: true
+---
+
 # aomlomics-jh
 
 Author of Dockerfile: Luke Thompson with decoration to allow JuptyerHub use by Eli Holmes (NOAA)

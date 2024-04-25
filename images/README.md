@@ -1,181 +1,143 @@
 ---
 layout: default
-title: Images
+title: Image Info
 nav_order: 2
 has_children: true
+has_toc: false
 ---
 
-# just-the-docs-template
 
-This is a *bare-minimum* template to create a [Jekyll] site that:
 
-- uses the [Just the Docs] theme;
-- can be built and published on [GitHub Pages];
-- can be built and previewed locally, and published on other platforms.
+# This is a Test Fork for GitHub Page Development 
+- Test GH Page: https://michaelakridge-noaa.github.io/nmfs-opensci-container-images/
 
-More specifically, the created site:
+---
+# NMFS Open Science Docker Stack
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
+## THE DOCKER STACK IS IN ACTIVE DESIGN and DEVELOPMENT 
 
-To get started with creating a site, simply:
+### Beta release targeted for June 1, 2024.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+These are a collection of container images to provide standardized environments for Python and R computing build off the [Rocker](https://rocker-project.org/images/devcontainer/images.html), [Pangeo](https://github.com/pangeo-data/pangeo-docker-images) and Jupyter base images. This repo holds the (mostly) stable docker stack for specific pipelines used in Fisheries. Our development and testing sandbox is here: [nmfs-opensci/container-images](https://github.com/nmfs-opensci/container-images) which is our sandbox and development location. Why use a container? Watch this video from Yuvi Panda (Jupyter Project) [video](https://www.youtube.com/watch?v=qgLPpULvBbQ) and read about the Rocker Project in the R Project Journal [article](https://journal.r-project.org/archive/2017/RJ-2017-065/RJ-2017-065.pdf) by Carl Boettiger and Dirk Eddelbuettel.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](#hosting-your-docs-from-an-existing-project-repo).
+## Stable set of images
 
-After completing the creation of your new site on GitHub, update it as needed:
+There are many other images in the `images` folder that are experimental in nature.
+  
 
-## Replace the content of the template pages
+| Image           | Description                            | Size | Link | Dockerfile |
+|-----------------|----------------------------------------|------|------|------------|
+| nmfs-opensci-python-base   | Geospatial Python based on NASA Openscapes image  | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Fnmfs-opensci-python-base/size?color=%2344cc11&tag=latest&label=image+size&trim=) | [nmfs-opensci-python-base](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Fnmfs-opensci-python-base) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/nmfs-opensci-python-base)
+| py-rocket-base   | Tidyverse based R image with Python  | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Fpy-rocket-base/size?color=%2344cc11&tag=latest&label=image+size&trim=) | [py-rocket-base](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Fpy-rocket-base) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/py-rocket-base)
+| py-rocket-geospatial   | Geospatial R and Python image | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Fpy-rocket-geospatial/size?color=%2344cc11&tag=4.3.3-3.10&label=image+size&trim=) | [py-rocket-geospatial](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Fpy-rocket-geospatial) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/py-rocket-geospatial)
+| arcgis          | For using ArcGIS within Jupyter Lab      | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Farcgis/size?color=%2344cc11&tag=latest&label=image+size&trim=) | [arcgis](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Farcgis) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/arcgis)
+| coastwatch       | CoastWatch Python + R      | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Fcoastwatch/size?color=%2344cc11&tag=latest&label=image+size&trim=) | [coastwatch](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Fcoastwatch) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/coastwatch)
+| cmip6-cookbook           | Tooling for working with CMIP6 climate simulations      | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Fcmip6-cookbook/size?color=%2344cc11&tag=latest&label=image+size&trim=) | [cmip6-cookbook](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Fcmip6-cookbook) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/cmip6-cookbook)
+| echopype         | Tooling for ocean sonar (acoustics) data processing  | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Fechopype/size?color=%2344cc11&tag=latest&label=image+size&trim=) | [echopype](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Fechopype) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/echopype)
+| VAST             | VAST with R 4.3.3  | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Fvast/size?color=%2344cc11&tag=latest&label=image+size&trim=) | [vast](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Fvast) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/vast)
+| aomlomics-jh     | NOAA AOML omics image for amplicon sequence processing workflow (adapted for JupyterHub deployment)  | ![](https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Faomlomics-jh/size?color=%2344cc11&tag=latest&label=image+size&trim=) | [aomlomics-jh](https://github.com/nmfs-opensci/container-images/pkgs/container/container-images%2Faomlomics-jh) | [Dockerfile](https://github.com/nmfs-opensci/container-images/tree/main/images/aomlomics-jh)
 
-Update the following files to your own content:
 
-- `index.md` (your new home page)
-- `README.md` (information for those who access your site repo on GitHub)
+*Click on the image name in the table above for a current list of installed packages and versions*
 
-## Changing the version of the theme and/or Jekyll
+## Design principles
 
-Simply edit the relevant line(s) in the `Gemfile`.
+* Python environment follows Pangeo images with micromamba installed as the solver and base and notebook environments. The Jupyter modules are installed in notebook environment and images will launch with the notebook activated, again following Pangeo design structure. Images that use Pangeo as base will have user jovyan and user home directory home/jovyan.
+* R set-up follows Rocker's environment design with the exception that the user home directory is home/jovyan so it plays nice with JupyterHub deployments. The user is rstudio however.
+* When an image contains both R and Python, the base image is rocker and micromamba is installed along with the Pangeo environment structure. RStudio will use the Python environment in the notebook environment when Python is used from within RStudio.
+* The images are designed to be deployable from JupyterHubs, Codespaces, GitPod, Colab, Binder, and on your computer via Docker or Podman. See instructions below.
+* However, they are not terribly light-weight (large). Use the original Jupyter, Pangeo or Rocker images if you are looking for simple lightweight data science images.
 
-## Adding a plugin
 
-The Just the Docs theme automatically includes the [`jekyll-seo-tag`] plugin.
+### Acknowledgements
 
-To add an extra plugin, you need to add it in the `Gemfile` *and* in `_config.yml`. For example, to add [`jekyll-default-layout`]:
+The core stack is credited to the work of Luis Lopez (NASA) who developed the NASA Openscapes Python image used in countless workshops on cloud-computing with NASA Earth Data. Subsequently the NASA Openscapes mentor cloud-infrastructure Slack group and weekly co-work sessions plugged away at the problem of helping users 'fledge' off the Openscapes JupyterHub, which involved creating images that were more versitile. Carl Boettiger (Rocker, UC Berkeley) and Eli Holmes (NOAA Fisheries) took on different aspects of this. The GitHub Action tooling is curtesy of Carl. Yuvi Panda (Jupyter, 2i2c) was also very helpful in desiging the 'scaffolding' in the images that helps them be robust and versitile.
 
-- Add the following to your site's `Gemfile`:
+## To run images in a JupyterHub with 'bring your image'
 
-  ```ruby
-  gem "jekyll-default-layout"
-  ```
+If your JupyterHub has this option:
 
-- And add the following to your site's `_config.yml`:
+* Click on the 'Bring your own image' radio button at bottom
+* Paste in url to your image (or any other image)
+* You will find the urls in the right nav bar under 'Packages'
+* Example `ghcr.io/nmfs-opensci/jupyter-base-notebook:latest`
 
-  ```yaml
-  plugins:
-    - jekyll-default-layout
-  ```
+## Run with a JupyterHub
 
-Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
+Should work out of the box. Put the url to the image whereever you would use images.
 
-## Publishing your site on GitHub Pages
+## Run with docker
 
-1.  If your created site is `YOUR-USERNAME/YOUR-SITE-NAME`, update `_config.yml` to:
+```
+docker run -p 8888:8888 ghcr.io/nmfs-opensci/jupyter-base-notebook:latest
+```
 
-    ```yaml
-    title: YOUR TITLE
-    description: YOUR DESCRIPTION
-    theme: just-the-docs
+On a Mac M2+ with Rosetta emulation turned on in the Docker Desktop settings.
+```
+docker run --platform linux/amd64 -p 8888:8888 ghcr.io/nmfs-opensci/jupyter-base-notebook:latest
+```
 
-    url: https://YOUR-USERNAME.github.io/YOUR-SITE-NAME
+In the terminal look for something like and put that in a browser.
+```
+http://127.0.0.1:8888/lab?token=6d45c7d88aba92a815647c
+```
 
-    aux_links: # remove if you don't want this link to appear on your pages
-      Template Repository: https://github.com/YOUR-USERNAME/YOUR-SITE-NAME
-    ```
+## Run with Binder
 
-2.  Push your updated `_config.yml` to your site on GitHub.
+Should work out of the box. Copy the Dockerfile into a repo and put the Dockerfile in the base or in a folder called `binder`. Then put this in a browser. Note many of the Docker images are big and somewhat hairy to build. This might not work in binder.
 
-3.  In your newly created repo on GitHub:
-    - go to the `Settings` tab -> `Pages` -> `Build and deployment`, then select `Source`: `GitHub Actions`.
-    - if there were any failed Actions, go to the `Actions` tab and click on `Re-run jobs`.
+```
+https://mybinder.org/v2/gh/user-name/reponame/main
+```
 
-## Building and previewing your site locally
+## With Codespaces
 
-Assuming [Jekyll] and [Bundler] are installed on your computer:
+Still working to streamline this.
 
-1.  Change your working directory to the root directory of your site.
+## GitPod -- like Codespaces
 
-2.  Run `bundle install`.
+Still working to streamline this.
 
-3.  Run `bundle exec jekyll serve` to build your site and preview it at `localhost:4000`.
+## Run on Colab?
 
-    The built site is stored in the directory `_site`.
+https://github.com/indigo-dc/udocker
 
-## Publishing your built site on a different platform
+Installation in the Jupyter notebook
+```
+%%shell
+pip install udocker
+udocker --allow-root install
+udocker --allow-root run -p 127.0.0.1:8888:8888 -v -e ghcr.io/nmfs-opensci/jupyter-base-notebook:latest
+```
 
-Just upload all the files in the directory `_site`.
+## License information
 
-## Customization
+All code used in the images is under open licenses. Some is copy-left which means if you modify their code (we don't), you need to also provide your source code. The Dockerfile code is released under Apache 2.0, a very permissive open source license which does not require that you make you own modifications open. See the README.md files for the licenses for specific code used in the Docker files.
 
-You're free to customize sites that you create with this template, however you like!
+* The Dockerfiles are released under Apache 2.0.
+* [jupyterhub](https://github.com/jupyterhub/jupyterhub?tab=License-1-ov-file#readme) : Modified BSD License
+* [juptyerlab](https://github.com/jupyterlab/jupyterlab?tab=License-1-ov-file#readme): Open license
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+* [Openscapes base Python image](https://github.com/nasa-openscapes/corn): MIT
+* [Pangeo Docker Stack](https://github.com/pangeo-data/pangeo-docker-images): MIT
+* [Python](https://docs.python.org/3/license.html): Zero clause BSD
 
-## Hosting your docs from an existing project repo
+* [Openscapes base rocker image](https://github.com/nasa-openscapes/py-rocket): MIT
+* [Rocker Docker Stack](https://github.com/rocker-org/rocker-versioned2?tab=GPL-2.0-1-ov-file#readme): GPL-2
+* [R](https://www.r-project.org/Licenses/): GPL-2, GPL-3
+* RStudio Server: GPL-3
 
-You might want to maintain your docs in an existing project repo. Instead of creating a new repo using the [just-the-docs template](https://github.com/just-the-docs/just-the-docs-template), you can copy the template files into your existing repo and configure the template's Github Actions workflow to build from a `docs` directory. You can clone the template to your local machine or download the `.zip` file to access the files.
+* conda and mamba solvers: are open source projects with 3-clause BSD license. Anaconda is not used in these images nor are the Anaconda repositories.
 
-### Copy the template files
+<hr>
 
-1.  Create a `.github/workflows` directory at your project root if your repo doesn't already have one. Copy the `pages.yml` file into this directory. GitHub Actions searches this directory for workflow files.
+## Disclaimer
 
-2.  Create a `docs` directory at your project root and copy all remaining template files into this directory.
+This repository is a scientific product and is not official communication of the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project content is provided on an ‘as is’ basis and the user assumes responsibility for its use. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.
 
-### Modify the GitHub Actions workflow
 
-The GitHub Actions workflow that builds and deploys your site to Github Pages is defined by the `pages.yml` file. You'll need to edit this file to that so that your build and deploy steps look to your `docs` directory, rather than the project root.
 
-1.  Set the default `working-directory` param for the build job.
+Or this? https://stackoverflow.com/questions/62820498/how-to-connect-google-colab-with-localhost-running-docker-image
 
-    ```yaml
-    build:
-      runs-on: ubuntu-latest
-      defaults:
-        run:
-          working-directory: docs
-    ```
+port forwarding https://biplobsd.me/blogs/view/run-swirl-open-source-search-engine-on-google-colab.md
 
-2.  Set the `working-directory` param for the Setup Ruby step.
-
-    ```yaml
-    - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-          cache-version: 0
-          working-directory: '${{ github.workspace }}/docs'
-    ```
-
-3.  Set the path param for the Upload artifact step:
-
-    ```yaml
-    - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "docs/_site/"
-    ```
-
-4.  Modify the trigger so that only changes within the `docs` directory start the workflow. Otherwise, every change to your project (even those that don't affect the docs) would trigger a new site build and deploy.
-
-    ```yaml
-    on:
-      push:
-        branches:
-          - "main"
-        paths:
-          - "docs/**"
-    ```
-
-## Licensing and Attribution
-
-This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
-
-The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Jekyll]: https://jekyllrb.com
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[Bundler]: https://bundler.io
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
-[`jekyll-default-layout`]: https://github.com/benbalter/jekyll-default-layout
-[`jekyll-seo-tag`]: https://jekyll.github.io/jekyll-seo-tag
-[MIT License]: https://en.wikipedia.org/wiki/MIT_License
-[starter workflows]: https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
-[actions/starter-workflows]: https://github.com/actions/starter-workflows/blob/main/LICENSE

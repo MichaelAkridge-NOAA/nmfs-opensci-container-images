@@ -1,3 +1,10 @@
+---
+layout: default
+title: jupyter-multiple-conda
+parent: Image Info
+nav_order: 2
+has_children: true
+---
 Solution involves:
 
 * adding nb_conda_kernels module to the base env

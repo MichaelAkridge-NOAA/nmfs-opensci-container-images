@@ -1,3 +1,11 @@
+---
+layout: default
+title: nmfs-opensci-python-base
+parent: Image Info
+nav_order: 2
+has_children: true
+---
+
 # Readme
 
 This is the base Python image used across most of the nmfs-opensci images. It is a geospatial Python image used by NASA Openscapes for their training and tutorials.
