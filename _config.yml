@@ -1,8 +1,7 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: nmfs-opensci-container-images
+description: nmfs-opensci-container-images using the Just the Docs theme!
 theme: just-the-docs
 color_scheme: wider
-url: https://michaelakridge-noaa.github.io
-
+url: https://just-the-docs.github.io
 aux_links:
   Template Repository: https://github.com/MichaelAkridge-NOAA/nmfs-opensci-container-images
