@@ -5,7 +5,6 @@ nav_order: 2
 has_children: true
 has_toc: false
 ---
----
 # NMFS Open Science Docker Stack
 
 ## THE DOCKER STACK IS IN ACTIVE DESIGN and DEVELOPMENT 
