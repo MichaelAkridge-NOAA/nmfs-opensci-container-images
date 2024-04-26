@@ -3,7 +3,7 @@ layout: default
 title: CMIP6 notebook
 parent: Image Info
 nav_order: 2
-has_children: true
+has_children: false
 ---
 
 [2]: <https://ghcr-badge.egpl.dev/nmfs-opensci/container-images%2Fcmip6-cookbook/latest_tag?color=%2344cc11&ignore=&label=version&trim=>

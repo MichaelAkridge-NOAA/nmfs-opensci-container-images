@@ -3,7 +3,7 @@ layout: default
 title: jupyter-multiple-conda
 parent: Image Info
 nav_order: 2
-has_children: true
+has_children: false
 ---
 Solution involves:
 

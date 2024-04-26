@@ -3,7 +3,7 @@ layout: default
 title: aomlomics-jh
 parent: Image Info
 nav_order: 2
-has_children: true
+has_children: false
 ---
 
 # aomlomics-jh
