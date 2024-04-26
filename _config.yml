@@ -1,7 +1,6 @@
 title: nmfs-opensci-container-images
 description: nmfs-opensci-container-images using the Just the Docs theme!
 theme: just-the-docs
-color_scheme: wider
 url: https://just-the-docs.github.io
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
