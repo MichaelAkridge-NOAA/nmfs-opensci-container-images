@@ -1,10 +1,11 @@
 ---
-layout: default
-title: Image Info
-nav_order: 2
-has_children: true
-has_toc: false
+title: Home
+layout: home
+nav_order: 1
 ---
+# This is a Test Fork for GitHub Page Development 
+- Test GH Page: https://michaelakridge-noaa.github.io/nmfs-opensci-container-images/
+
 ---
 # NMFS Open Science Docker Stack
 
@@ -33,12 +34,3 @@ There are many other images in the `images` folder that are experimental in natu
 
 
 *Click on the image name in the table above for a current list of installed packages and versions*
-
-## Design principles
-
-* Python environment follows Pangeo images with micromamba installed as the solver and base and notebook environments. The Jupyter modules are installed in notebook environment and images will launch with the notebook activated, again following Pangeo design structure. Images that use Pangeo as base will have user jovyan and user home directory home/jovyan.
-* R set-up follows Rocker's environment design with the exception that the user home directory is home/jovyan so it plays nice with JupyterHub deployments. The user is rstudio however.
-* When an image contains both R and Python, the base image is rocker and micromamba is installed along with the Pangeo environment structure. RStudio will use the Python environment in the notebook environment when Python is used from within RStudio.
-* The images are designed to be deployable from JupyterHubs, Codespaces, GitPod, Colab, Binder, and on your computer via Docker or Podman. See instructions below.
-* However, they are not terribly light-weight (large). Use the original Jupyter, Pangeo or Rocker images if you are looking for simple lightweight data science images.
-

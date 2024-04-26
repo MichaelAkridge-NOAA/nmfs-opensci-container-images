@@ -1,8 +1,3 @@
----
-title: Home
-layout: home
-nav_order: 1
----
 # This is a Test Fork for GitHub Page Development 
 - Test GH Page: https://michaelakridge-noaa.github.io/nmfs-opensci-container-images/
 
