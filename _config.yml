@@ -4,4 +4,4 @@ theme: just-the-docs
 color_scheme: wider
 url: https://just-the-docs.github.io
 aux_links:
-  Template Repository: https://github.com/MichaelAkridge-NOAA/nmfs-opensci-container-images
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
