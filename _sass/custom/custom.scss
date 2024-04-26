@@ -1,8 +1,11 @@
 @import "./color_schemes/dark";
 
 a{
-color:#04B2D9;
+color:#0367A6;
 }
-  .main-content {
-    max-width: auto;
-  }
+
+@media (min-width: 55.5rem) {
+.side-bar{width: calc((100% - 66.5rem) / 2 + 1.5rem);}
+}
+
+
