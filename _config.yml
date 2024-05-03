@@ -2,6 +2,6 @@ title: nmfs-opensci-container-images
 description: nmfs-opensci-container-images using the Just the Docs theme!
 theme: just-the-docs
 url: https://michaelakridge-noaa.github.io/
-logo: "<img src="assets/images/nmfs-opensci-logo.png" alt="NMFS Open Science logo" style="width:150px">"
+logo: "assets/images/nmfs-opensci-logo.png"
 aux_links:
   Github Repo: https://github.com/MichaelAkridge-NOAA/nmfs-opensci-container-images
